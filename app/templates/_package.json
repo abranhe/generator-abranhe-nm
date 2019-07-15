@@ -14,10 +14,11 @@
 		"node": ">=8"
 	},
 	"scripts": {
-		"test": "xo && <% if (nyc) { %>nyc <% } %>ava"
+		"test": "xo && <% if (nyc) { %>nyc <% } %>ava && tsd"
 	},
 	"files": [
-		"index.js"<% if (cli) { %>,
+		"index.js",
+		"index.d.ts"<% if (cli) { %>,
 		"cli.js"<% } %>
 	],
 	"keywords": [<% if (cli) { %>
@@ -29,9 +30,10 @@
 		"meow": "^5.0.0"
 	<% } %>},
 	"devDependencies": {
-		"ava": "^1.4.1",<% if (codecov) { %>
+		"ava": "^2.2.0",<% if (codecov) { %>
 		"codecov": "^3.4.0",<% } %><% if (nyc) { %>
 		"nyc": "^14.1.0",<% } %>
+		"tsd": "^0.7.3",
 		"xo": "^0.24.0"
 	}<% if (codecov) { %>,
 	"nyc": {
