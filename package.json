@@ -1,6 +1,6 @@
 {
   "name": "@abranhe/generator-nm",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Scaffold out a node module with my personal style",
   "license": "MIT",
   "repository": "abranhe/generator-npm",
