@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Scaffold out a node module with my personal style",
   "license": "MIT",
-  "repository": "abranhe/generator-nm",
+  "repository": "abranhe/generator-npm",
   "author": {
     "name": "Carlos Abraham",
     "email": "abraham@abranhe.com",
@@ -15,7 +15,9 @@
   "scripts": {
     "test": "xo && ava"
   },
-  "files": [ "app" ],
+  "files": [
+    "app"
+  ],
   "keywords": [
     "yeoman-generator",
     "plugin",
@@ -48,6 +50,8 @@
     "failWithoutAssertions": false
   },
   "xo": {
-    "ignores": [ "app/templates/**" ]
+    "ignores": [
+      "app/templates/**"
+    ]
   }
 }

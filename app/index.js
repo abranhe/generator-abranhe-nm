@@ -105,8 +105,8 @@ module.exports = class extends Generator {
         githubUsername: this.options.org || props.githubUsername,
         repoName,
         name: this.user.git.name(),
-				email: this.user.git.email(),
-				currentYear: new Date().getFullYear(),
+        email: this.user.git.email(),
+        currentYear: new Date().getFullYear(),
         website: props.website,
         humanizedWebsite: humanizeUrl(props.website),
         cli,
@@ -132,6 +132,7 @@ module.exports = class extends Generator {
         );
       }
 
+      mv('funding.yml', '.github/funding.yml')
       mv('editorconfig', '.editorconfig');
       mv('gitattributes', '.gitattributes');
       mv('gitignore', '.gitignore');

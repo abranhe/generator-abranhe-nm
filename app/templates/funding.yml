@@ -1,0 +1,4 @@
+github: <%= githubUsername %>
+patreon: <%= githubUsername %>
+open_collective: <%= githubUsername %>
+custom: https://cash.me/$<%= githubUsername %>
