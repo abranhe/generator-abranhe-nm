@@ -1,19 +1,20 @@
 {
   "name": "@abranhe/generator-nm",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Scaffold out a node module with my personal style",
   "license": "MIT",
-  "repository": "abranhe/generator-npm",
+  "homepage": "https://p.abranhe.com/generator-abranhe-nm",
+  "repository": "abranhe/generator-abranhe-nm",
   "author": {
     "name": "Carlos Abraham",
     "email": "abraham@abranhe.com",
-    "url": "abranhe.com"
+    "url": "https://abranhe.com"
   },
   "engines": {
     "node": ">=8"
   },
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo"
   },
   "files": [
     "app"

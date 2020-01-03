@@ -1,9 +1,10 @@
+# @abranhe/generator-nm [![Github](https://github.com/abranhe/generator-abranhe-nm/workflows/build/badge.svg)](https://github.com/abranhe/generator-abranhe-nm/actions) [![travis](https://img.shields.io/travis/abranhe/generator-abranhe-nm)](https://travis-ci.org/abranhe/generator-abranhe-nm) [![license](https://img.shields.io/github/license/abranhe/generator-abranhe-nm.svg)](https://github.com/abranhe/generator-abranhe-nm/blob/master/license) [![npm](https://img.shields.io/npm/v/@abranhe/generator-nm.svg?logo=npm)](https://www.npmjs.com/package/@abranhe/generator-nm)
+
 ## Install
 
 ```
-$ npm install --global yo @abranhe/nm
+$ npm install --global yo @abranhe/generator-nm
 ```
-
 
 ## Usage
 
@@ -12,26 +13,6 @@ With [yo](https://github.com/yeoman/yo):
 ```
 $ yo @abranhe/nm
 ```
-
-There are multiple command-line options available:
-
-```
-$ yo nm --help
-
-  Usage:
-    yo nm [options]
-
-  Options:
-    --help          # Print the generator's options and usage
-    --skip-cache    # Do not remember prompt answers                      Default: false
-    --skip-install  # Do not automatically install dependencies           Default: false
-    --org           # Publish to a GitHub organization account
-    --cli           # Add a CLI
-    --coverage      # Add code coverage with nyc
-    --codecov       # Upload coverage to codecov.io (implies --coverage)
-```
-
-The `--org` option takes a string value (i.e. `--org=avajs`). All others are boolean flags and can be negated with the `no` prefix (i.e. `--no-codecov`). You will be prompted for any options not passed on the command-line.
 
 ## License
 

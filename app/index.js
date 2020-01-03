@@ -20,16 +20,6 @@ module.exports = class extends Generator {
 			type: Boolean,
 			description: 'Add a CLI'
 		});
-
-		this.option('coverage', {
-			type: Boolean,
-			description: 'Add code coverage with nyc'
-		});
-
-		this.option('codecov', {
-			type: Boolean,
-			description: 'Upload coverage to codecov.io (implies coverage)'
-		});
 	}
 
 	init() {
@@ -67,24 +57,6 @@ module.exports = class extends Generator {
 				type: 'confirm',
 				default: Boolean(this.options.cli),
 				when: () => this.options.cli === undefined
-			},
-			{
-				name: 'nyc',
-				message: 'Do you need code coverage?',
-				type: 'confirm',
-				default: Boolean(this.options.codecov || this.options.coverage),
-				when: () =>
-					this.options.coverage === undefined &&
-          this.options.codecov === undefined
-			},
-			{
-				name: 'codecov',
-				message: 'Upload coverage to codecov.io?',
-				type: 'confirm',
-				default: false,
-				when: x =>
-					(x.nyc || this.options.coverage) &&
-          this.options.codecov === undefined
 			}
 		]).then(props => {
 			const or = (option, prop) =>
@@ -93,9 +65,6 @@ module.exports = class extends Generator {
 					this.options[option];
 
 			const cli = or('cli');
-			const codecov = or('codecov');
-			const nyc = codecov || or('coverage', 'nyc');
-
 			const repoName = utils.repoName(props.moduleName);
 
 			const tpl = {
@@ -109,9 +78,7 @@ module.exports = class extends Generator {
 				currentYear: new Date().getFullYear(),
 				website: props.website,
 				humanizedWebsite: humanizeUrl(props.website),
-				cli,
-				nyc,
-				codecov
+				cli
 			};
 
 			const mv = (from, to) => {
@@ -133,6 +100,8 @@ module.exports = class extends Generator {
 			}
 
 			mv('funding.yml', '.github/funding.yml');
+			mv('ci.yml', '.github/workflows/ci.yml');
+			mv('publish.yml', '.github/workflows/publish.yml');
 			mv('editorconfig', '.editorconfig');
 			mv('gitattributes', '.gitattributes');
 			mv('gitignore', '.gitignore');
