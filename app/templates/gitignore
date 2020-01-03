@@ -1,5 +1,3 @@
 node_modules
-yarn.lock<% if (nyc) { %>
-.nyc_output
-coverage<% } %>
-DS_Store
+yarn.lock
+.DS_Store
