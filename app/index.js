@@ -57,7 +57,7 @@ module.exports = class extends Generator {
 				type: 'confirm',
 				default: Boolean(this.options.cli),
 				when: () => this.options.cli === undefined
-			}
+			},
 		]).then(props => {
 			const or = (option, prop) =>
 				this.options[option] === undefined ?
